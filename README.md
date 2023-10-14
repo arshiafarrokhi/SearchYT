@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://arshiafarrokhi.github.io/SearchYT/">
-    <img src="assets\img\yt.png" alt="Logo" width="80" height="80">
+    <img src="assets\img\yt.png" alt="Logo" width="180" height="80">
   </a>
 
   <h3 align="center">SearchYT</h3>
@@ -22,7 +22,7 @@
 
 ## About The Project
 
-<img src="assets\images\Untitled.png" alt="about">
+<img src="assets\img\Untitled.png" alt="about">
 
 Hints :
 
