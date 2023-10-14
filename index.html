@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #FBAB7E;
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+            /* overflow: hidden; */
+            position: relative;
+            min-height: 100vh;
+        }
+
+        div {
+            width: 90% !important;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 40px;
+            border-top: 2px solid black;
+            position: fixed;
+            /* background-color: #fff; */
+            top: 95%;
+            left: 0;
+        }
+
+
+        .list>li {
+            /* display: flex;
+            align-items: center !important;
+            justify-content: center !important; */
+            height: 50px;
+            list-style-type: none;
+            width: 50%;
+            /* height: 50px; */
+            border-bottom: 2px solid black;
+            margin: 2px 0 !important;
+            display: none;
+            transition: 10s;
+        }
+
+        .list>li:hover{
+            width: 97%;
+            border-bottom: 2px solid #fd5c5c;
+
+        }
+
+        .list>li>a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            display: flex !important;
+            align-items: center !important;
+            /* justify-content: center !important; */
+            transition: .4s;
+
+        }
+
+        .list>li>a:hover {
+            color: #fd5c5c;
+        }
+
+        .list {
+            width: 93%;
+            /* display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            justify-items: center; */
+        }
+
+        .inp::placeholder {
+            font-size: 2vh;
+        }
+
+        .inp {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .inptt {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1 class="my-5 ">Finde Youtube of Your Favorite Artist</h1>
+    <div class="input-group rounded">
+        <input id="inp" type="search" class="form-control rounded inp" placeholder="Search Favorite Artist..."
+            aria-label="Search" aria-describedby="search-addon" />
+    </div>
+    <ul class="list">
+        <li><a href="https://www.youtube.com/channel/UC0WP5P-ufpRfjbNrmOWwLBQ">the Weeknd</a></li>
+        <li><a href="https://www.youtube.com/@TravisScottXX">travis Sccot</a></li>
+        <li><a href="https://www.youtube.com/channel/UCByOQJjav0CUDwxCk-jVNRQ">drake</a></li>
+        <li><a href="https://www.youtube.com/@lilwayne">lil Wayne</a></li>
+        <li><a href="https://www.youtube.com/@officialfuturevideos">future</a></li>
+        <li><a href="https://www.youtube.com/@dontolivermusic">don Toliver</a></li>
+        <li><a href="https://www.youtube.com/@NardoWick">nardo Wick</a></li>
+        <li><a href="https://www.youtube.com/channel/UClS1ZfxMTd9h1AkiQP2V54w">808 Mafia</a></li>
+        <li><a href="https://www.youtube.com/@JuiceWRLD">juice Wrld</a></li>
+        <li><a href="https://www.youtube.com/@xxxtentacion">XXXTentacion</a></li>
+        <li><a href="https://www.youtube.com/@metroboomin">metro Boomin</a></li>
+        <li><a href="https://www.youtube.com/@21savage">21 Savage</a></li>
+        <li><a href="https://www.youtube.com/channel/UCeLHszkByNZtPKcaVXOCOQQ">post Malone</a></li>
+        <li><a href="https://www.youtube.com/channel/UC3jOd7GUMhpgJRBhiLzuLsg">niki Minaj</a></li>
+        <li><a href="https://www.youtube.com/@cardib">cardi B</a></li>
+    </ul>
+    <footer>
+        <p>Crafted with ❤️ by <span><a href="https://arshiafarrokhi.com/">Arshia Farrokhi</a></span></p>
+    </footer>
+</body>
+<script>
+
+    let _inp = document.getElementById('inp')
+    let _li = document.querySelectorAll('li')
+
+    // _inp.classList.add('inptt')
+
+    _inp.addEventListener('input', (e) => {
+        let val = e.target.value
+        _inp.focus()
+
+        if (val == null || val == "") {
+            _li.forEach((item) => {
+                item.style.display = 'none'
+            })
+        } else {
+            _li.forEach((item) => {
+                let text = item.innerText
+
+                if (
+                    (text.substring(0, val.length)) == val
+                ) {
+                    item.style.display = 'flex'
+                } else {
+                    item.style.display = 'none'
+                }
+
+            })
+        }
+    })
+    // if (
+    //     (text.indexOf(val)) >= 0
+    // ) {
+    //     item.style.display = 'flex'
+    // } else {
+    //     item.style.display = 'none'
+    // }
+</script>
+
+</html>
